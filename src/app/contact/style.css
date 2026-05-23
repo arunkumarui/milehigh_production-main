@@ -1,0 +1,26 @@
+.contact-subtitle {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.contact-title {
+    margin-bottom: 25px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.primary {
+    color: #000;
+    background: #c9a24e;
+    border: none;
+}
+.btn {
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-weight: 600;
+    transition: all .3s;
+}

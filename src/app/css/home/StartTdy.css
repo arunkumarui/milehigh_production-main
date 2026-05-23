@@ -1,0 +1,177 @@
+/* ================= BASE ================= */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("/your-image.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.95));
+}
+
+/* ================= CONTENT ================= */
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #c9a24e;
+    border-radius: 50px;
+    color: #c9a24e;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* TYPEWRITER TITLE */
+.title {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    min-height: 80px;
+}
+
+/* blinking cursor */
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    color: #c9a24e;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.subtitle {
+    margin-top: 15px;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.primary {
+    background: #c9a24e;
+    color: black;
+    border: none;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ================= 🎬 FILM GRAIN ================= */
+.film-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.08;
+    animation: grainMove 0.2s steps(2) infinite;
+}
+
+@keyframes grainMove {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(-2px,2px); }
+    50% { transform: translate(2px,-2px); }
+    75% { transform: translate(-1px,1px); }
+    100% { transform: translate(0,0); }
+}
+
+/* ================= 🎞️ LENS FLARE ================= */
+.lens-flare {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,200,100,0.25), transparent 70%);
+    filter: blur(40px);
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.flare1 {
+    top: 10%;
+    left: 15%;
+}
+
+.flare2 {
+    bottom: 10%;
+    right: 20%;
+    background: radial-gradient(circle, rgba(120,180,255,0.2), transparent 70%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-30px) scale(1.1); }
+}
+
+/* ================= 📱 RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .badge {
+        font-size: 12px;
+    }
+}

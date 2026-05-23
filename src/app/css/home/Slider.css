@@ -1,0 +1,261 @@
+/* =========================
+   GLOBAL
+========================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000;
+}
+
+/* =========================
+   SWIPER
+========================= */
+
+.heroSwiper {
+  width: 100%;
+  height: 90vh;
+  touch-action: pan-y;
+}
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   SLIDE
+========================= */
+
+.hero-slide {
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  /* MOBILE FIX */
+  touch-action: pan-y;
+}
+
+/* =========================
+   CINEMATIC ZOOM EFFECT
+========================= */
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+
+  animation: zoomEffect 10s ease-in-out infinite alternate;
+
+  z-index: 0;
+}
+
+@keyframes zoomEffect {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.45)
+  );
+
+  z-index: 1;
+
+  /* IMPORTANT MOBILE FIX */
+  pointer-events: none;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content-wrapper {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #dddddd;
+  margin-bottom: 20px;
+
+  animation: fadeUp 1s ease;
+}
+
+.hero-title {
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.hero-btn {
+  padding: 14px 42px;
+  border-radius: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid white;
+  transition: 0.4s ease;
+
+  animation: fadeUp 1.4s ease;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   TEXT ANIMATION
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.swiper-pagination {
+  bottom: 35px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+
+  background: white !important;
+
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 35px;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 68px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 56px;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 4px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .hero-slide {
+    padding: 0 15px;
+    height: 90svh;
+  }
+
+  .heroSwiper {
+    height: 100svh;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .swiper-pagination {
+    bottom: 20px !important;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 11px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+}
